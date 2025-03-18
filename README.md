@@ -54,7 +54,7 @@ In this course, you will:
 [![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=review-pull-requests&owner=%40me&name=skills-review-pull-requests&description=My+clone+repository&visibility=public)
 
 1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, most of the prompts will automatically fill in for you.
+2. Most of the prompts will automatically fill in for you.
    - For owner, choose your personal account or an organization to host the repository.
    - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
    - Scroll down and click the **Create repository** button at the bottom of the form.
