@@ -9,14 +9,16 @@ _Congratulations friend, you've completed this course!_
 
 <img src=https://octodex.github.com/images/hula_loop_octodex03.gif alt=celebrate width=300 align=right>
 
-As you continue working on GitHub, remember that high quality reviews improve your projects. If you are new to a repository, inquire about what review practices they have so you can hit the ground running.
+As you continue working with GitHub Issues, keep in mind that effective issue tracking and management help improve the success of your projects. If you're new to a repository, make sure to ask about the project’s issue management practices so you can get started efficiently.
 
-Here's a recap of all the tasks you've accomplished in your repository:
+Here’s a quick summary of the tasks you’ve completed in GitHub Issues so far:
 
-- You learned how to assign pull requests for review.
-- You left a review on a pull request.
-- You suggested changes to a pull request.
-- You applied suggested changes to a pull request.
+- Created a new issue to track tasks, bugs, or feature requests.
+- Learned how to label and organize issues for better clarity and workflow.
+- Assigned issues to team members to delegate tasks effectively.
+- Collaborated with your team by commenting on issues and @mentioning relevant users.
+- Resolved issues by marking them as closed or reopened them as needed.
+- Learned how to update labels and milestones to keep progress on track.
 
 ### What's next?
 
