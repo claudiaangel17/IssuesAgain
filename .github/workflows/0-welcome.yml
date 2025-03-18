@@ -52,7 +52,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: bryceshen1/issues1
           fetch-depth: 0 # Let's get all the branches.
 
       # Create update-game branch, update game, and create a commit for the learner.
