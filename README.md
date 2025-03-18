@@ -21,22 +21,22 @@ _Collaborate and work together on GitHub._
 
 ## Welcome
 
-All great projects start with collaboration. Pull requests are the foundation of teamwork on GitHub — and pull request reviews give you the ability to work together and discuss changes specific to a pull request by commenting, requesting changes, or approving.
+People use GitHub Issues to manage tasks, track progress, and collaborate on various projects. Whether you're following bug fixes, new features, or team task management, GitHub Issues keeps everything on the right track. This GitHub Skills guide will walk you through the basics of GitHub Issues so you can manage your projects more effectively.
 
-- **Who is this for**: Developers, new GitHub users, users new to Git, students, managers, teams.
-- **What you'll learn**: When and how to request a review; how to provide a review of someone else's pull request.
-- **What you'll build**: We'll be reviewing a pull request for a simple game.
-- **Prerequisites**: We assume you are familiar with creating branches, commits, and pull requests—you can learn this in our [Introduction to GitHub](https://github.com/skills/introduction-to-github) course.
-- **How long**: This course takes less than 30 minutes to complete.
+- **Who is this for**: Project managers, team members, and GitHub users interested in learning how to use GitHub Issues to track and manage work.
+- **What you'll learn**: How to create and keep issues up to date; how to organize issues with labels, milestones, and assignees; how to track progress with GitHub Issues.
+- **What you'll build**: A simple project board using GitHub Issues to track your work and an effective workflow with clear task assignments.
+- **Prerequisites**: …
+- **How long**: …
 
 In this course, you will:
 
-1. Open a pull request
-2. Assign yourself
-3. Leave a review
-4. Suggest changes
-5. Apply changes
-6. Merge your pull request
+1. Create an issue
+2. Use labels & milestones
+3. Assign issues
+4. Collaborate on issues
+5. Resolve an issue
+6. Follow best practices
 
 ### How to start this course
 
