@@ -7,7 +7,7 @@
   Add your open source license, GitHub uses MIT license.
 -->
 
-# Review pull requests
+# Introduction to GitHub Issues
 
 _Collaborate and work together on GitHub._
 
