@@ -9,7 +9,7 @@
 
 # Introduction to GitHub Issues
 
-_Collaborate and work together on GitHub._
+_Collaborate and work together through GitHub Issues._
 
 </header>
 
