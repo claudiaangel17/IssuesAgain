@@ -23,19 +23,18 @@ jobs:
           if [ "$current_step" != "0" ]; then
             echo "Not at step 0; exiting."
             exit 0
-          fi
 
-      - name: Update step 1.md
+      - name: Update 0-welcome.md to 1-create-an-issue.md
         run: |
-          echo "Updating step 1.md"
-          # Modify step 1.md as needed
-          echo "Content for step 1" > path/to/step\ 1.md
+          echo "Updating 0-welcome.md to 1-create-an-issue.md"
+          mv .github/steps/0-welcome.md .github/steps/1-create-an-issue.md
+          echo "Content for step 1" > .github/steps/1-create-an-issue.md
 
       - name: Commit and push changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add path/to/step\ 1.md
+          git add .github/steps/1-create-an-issue.md
           git commit -m "Update to step 1"
           git push origin main
 
