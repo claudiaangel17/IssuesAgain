@@ -1,79 +1,47 @@
-name: Step 0, Welcome
+name: Update to Step 1
 
-# This step triggers after the learner creates a new repository from the template.
-# This workflow updates from step 0 to step 1.
-
-# This will run every time we push a commit to `main`.
-# Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # Allows manual triggering of the workflow
   push:
     branches:
-      - main
+      - main  # Triggers the workflow on push to the main branch
 
-# Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
-  # Need `contents: read` to checkout the repository.
-  # Need `contents: write` to update the step metadata.
-  contents: write
+  contents: write  # Grants permission to modify repository contents
 
 jobs:
-  # Get the current step to only run the main job when the learner is on the same step.
-  get_current_step:
-    name: Check current step number
+  update_step_file:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - id: get_step
+
+      - name: Verify current step
         run: |
-          echo "current_step=$(cat .github/steps/step.txt)" >> $GITHUB_ENV
-    outputs:
-      current_step: ${{ env.current_step }}
-
-  on_start:
-    name: On start
-    needs: get_current_step
-
-    # We will only run this action when:
-    # 1. This repository isn't the template repository.
-    # 2. The step is currently 0.
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
-    # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
-    if: >-
-      ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 0 }}
-
-    # We'll run Ubuntu for performance instead of Mac or Windows.
-    runs-on: ubuntu-latest
-
-    steps:
-      # We'll need to check out the repository so that we can edit the README.
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Let's get all the branches.
-
-      # Create update-game branch, update game, and create a commit for the learner.
-      - name: Prepare a branch and commit
-        run: |
-          echo "Make sure we are on step 0"
-          if [ "$(cat .github/steps/step.txt)" != "0" ]
-          then
-            echo "Current step is not 0"
-            exit 1
+          current_step=$(cat .github/steps/step.txt)
+          echo "Current step is $current_step"
+          if [ "$current_step" != "0" ]; then
+            echo "Not at step 0; exiting."
+            exit 0
           fi
 
-          echo "Make a branch"
-          BRANCH=update-game
-          git checkout -b $BRANCH
+      - name: Update step 1.md
+        run: |
+          echo "Updating step 1.md"
+          # Modify step 1.md as needed
+          echo "Content for step 1" > path/to/step\ 1.md
 
-          echo "Update index.html"
-          sed -i.bak 's/Game over/Game over/g'  # Ensure proper replacement
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add path/to/step\ 1.md
+          git commit -m "Update to step 1"
+          git push origin main
 
-          echo "Commit changes"
-          git add index.html
-          git commit -m "Update game over text"
-
-          echo "Push changes"
-          git push origin $BRANCH
+      - name: Update step.txt to reflect current step
+        run: |
+          echo "1" > .github/steps/step.txt
+          git add .github/steps/step.txt
+          git commit -m "Advance to step 1"
+          git push origin main
