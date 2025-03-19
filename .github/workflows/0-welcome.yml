@@ -69,27 +69,4 @@ jobs:
           git checkout -b $BRANCH
 
           echo "Update index.html"
-          sed -i.bak 's/Game over/Game over, refresh to play again 🧑‍💻 🤖!/' index.html
-
-          echo "Make a commit"
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
-          git add index.html
-          git commit --message="Update game over message"
-
-          echo "Push"
-          git push --set-upstream origin $BRANCH
-
-          echo "Restore main"
-          git checkout main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # In README.md, switch step 0 for step 1.
-      - name: Update to step 1
-        uses: skills/action-update-step@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 0
-          to_step: 1
-          branch_name: update-game
+          sed -i.bak 's/Game over](#) ▋
