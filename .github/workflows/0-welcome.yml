@@ -16,6 +16,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Initialize step.txt if it doesn't exist or is empty
+      - name: Initialize step.txt if not present
+        run: |
+          if [ ! -f .github/steps/step.txt ] || [ ! -s .github/steps/step.txt ]; then
+            echo "Initializing step.txt with step 0"
+            echo "0" > .github/steps/step.txt
+            git add .github/steps/step.txt
+            git commit -m "Initialize step.txt with step 0"
+            git push origin main
+          fi
+
       - name: Verify current step
         run: |
           current_step=$(cat .github/steps/step.txt)
