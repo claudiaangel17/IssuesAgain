@@ -53,7 +53,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Let's get all the branches.
-          ref: update-game
+
+      # Create or update the update-game branch.
+      - name: Create or update branch
+        run: |
+          git checkout -B update-game
 
       # In README.md, switch step 1 for step 2.1.
       - name: Update to step 2.1
@@ -63,3 +67,8 @@ jobs:
           from_step: 1
           to_step: 2.1
           branch_name: update-game
+
+      # Push changes to the update-game branch.
+      - name: Push changes
+        run: |
+          git push origin update-game --force
