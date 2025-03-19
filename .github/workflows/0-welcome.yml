@@ -69,4 +69,11 @@ jobs:
           git checkout -b $BRANCH
 
           echo "Update index.html"
-          sed -i.bak 's/Game over](#) ▋'
+          sed -i.bak 's/Game over/Game over](#)/g'
+
+          echo "Commit changes"
+          git add index.html
+          git commit -m "Update game over text"
+
+          echo "Push changes"
+          git push origin $BRANCH
